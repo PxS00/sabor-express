@@ -15,7 +15,7 @@ def display_options():
 
 def register_new_restaurant():
     display_subtitle('Cadastro de novos restaurantes')
-    print('\n')
+
     name = input('Digite o nome do restaurante que deseja cadastrar: ')
     category = input(f'Digite a categoria do restaurante {name}: ')
     restaurant_data = {'name':name, 'category':category, 'active':False}
@@ -25,17 +25,18 @@ def register_new_restaurant():
 
 def list_restaurants():
     display_subtitle('Listando restaurantes')
-    print('\n')
+
+    print(f'{'Nome do restaurante'.ljust(22)} | {'Categoria'.ljust(20)} | Status')
     for restaurant in restaurants:
         restaurant_name = restaurant['name']
         restaurant_category = restaurant['category']
-        restaurant_activity = restaurant['active']
-        print(f'- {restaurant_name} | {restaurant_category} | {restaurant_activity}')
+        restaurant_activity = 'Ativado' if restaurant['active'] else 'Desativado'
+        print(f'- {restaurant_name.ljust(20)} | {restaurant_category.ljust(20)} | {restaurant_activity}')
     back_to_main_menu()
 
 def toggle_restaurant_state():
     display_subtitle('Alterando estado do restaurante')
-    print('\n')
+    
     restaurant_name = input('Digite o nome do restaurante que deseja alternar o estado: ')
     restaurant_found = False
     for restaurant in restaurants:
@@ -52,10 +53,9 @@ def toggle_restaurant_state():
 
 def end_app():
     display_subtitle('Encerrando app...')
-    print('\n')
 
 def invalid_option():
-    print('Opção inválida!\n')
+    display_subtitle('Opção inválida!')
     back_to_main_menu()
 
 def back_to_main_menu():
@@ -64,7 +64,11 @@ def back_to_main_menu():
 
 def display_subtitle(text):
     os.system('cls')
+    line = '-' * (len(text))
+    print(line)
     print(text)
+    print(line)
+    print()
 
 def choose_option():
     try:
