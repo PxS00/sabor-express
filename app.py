@@ -10,15 +10,17 @@ def display_name():
 def display_options():
     print('1. Cadastrar restaurante')
     print('2. Listar restaurantes')
-    print('3. Ativar restaurante')
+    print('3. Atividade do restaurante')
     print('4. Sair\n')
 
 def register_new_restaurant():
     display_subtitle('Cadastro de novos restaurantes')
     print('\n')
-    restaurant_name = input('Digite o nome do restaurante que deseja cadastrar: ')
-    restaurants.append(restaurant_name)
-    print(f'O restaurante {restaurant_name} foi cadastrado com sucesso')
+    name = input('Digite o nome do restaurante que deseja cadastrar: ')
+    category = input(f'Digite a categoria do restaurante {name}: ')
+    restaurant_data = {'name':name, 'category':category, 'active':False}
+    restaurants.append(restaurant_data)
+    print(f'O restaurante {name} foi cadastrado com sucesso')
     back_to_main_menu()
 
 def list_restaurants():
@@ -31,13 +33,30 @@ def list_restaurants():
         print(f'- {restaurant_name} | {restaurant_category} | {restaurant_activity}')
     back_to_main_menu()
 
-def invalid_option():
-    print('Opção inválida!\n')
+def toggle_restaurant_state():
+    display_subtitle('Alterando estado do restaurante')
+    print('\n')
+    restaurant_name = input('Digite o nome do restaurante que deseja alternar o estado: ')
+    restaurant_found = False
+    for restaurant in restaurants:
+        if restaurant_name == restaurant['name']:
+            restaurant_found = True
+            restaurant['active'] = not restaurant['active']
+            message = f'O restaurante {restaurant_name} foi ativado com sucesso' if restaurant['active'] else f'O restaurante {restaurant_name} foi desativado com sucesso'
+            print(message)
+
+    if not restaurant_found:
+        print('O restaurante não foi encontrado')
+
     back_to_main_menu()
 
 def end_app():
     display_subtitle('Encerrando app...')
     print('\n')
+
+def invalid_option():
+    print('Opção inválida!\n')
+    back_to_main_menu()
 
 def back_to_main_menu():
     input('\nDigite uma tecla para voltar ao menu principal: ')
@@ -56,7 +75,7 @@ def choose_option():
             case 2:
                 list_restaurants()
             case 3:
-                print('Ativar restaurante')
+                toggle_restaurant_state()
             case 4:
                 end_app()
             case _:
