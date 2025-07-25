@@ -1,6 +1,8 @@
 import os
 
-restaurants = ['Na Brasa Cozinha', 'Flor do Manjericão']
+restaurants = [ {'name':'Na Brasa Cozinha', 'category':'Brasileira', 'active':False},
+                {'name':'Pizza Suprema', 'category':'Pizza', 'active':True},
+                {'name':'Grão & Grelha', 'category':'Hamburguer', 'active':False}]
 
 def display_name():
     print('𝓢𝓪𝓫𝓸𝓻 𝓔𝓼𝓹𝓻𝓮𝓼𝓼\n')
@@ -23,7 +25,10 @@ def list_restaurants():
     display_subtitle('Listando restaurantes')
     print('\n')
     for restaurant in restaurants:
-        print(f'. {restaurant}')
+        restaurant_name = restaurant['name']
+        restaurant_category = restaurant['category']
+        restaurant_activity = restaurant['active']
+        print(f'- {restaurant_name} | {restaurant_category} | {restaurant_activity}')
     back_to_main_menu()
 
 def invalid_option():
