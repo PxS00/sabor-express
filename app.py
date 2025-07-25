@@ -19,18 +19,21 @@ def invalid_option():
     main()
 
 def choose_option():
-    option_chosen = int(input('Escolha uma opção: '))
-    match option_chosen:
-        case 1:
-            print('Adicionar restaurante')
-        case 2:
-            print('Listar restaurantes')
-        case 3:
-            print('Ativar restaurante')
-        case 4:
-            end_app()
-        case _:
-            invalid_option()
+    try:
+        option_chosen = int(input('Escolha uma opção: '))
+        match option_chosen:
+            case 1:
+                print('Adicionar restaurante')
+            case 2:
+                print('Listar restaurantes')
+            case 3:
+                print('Ativar restaurante')
+            case 4:
+                end_app()
+            case _:
+                invalid_option()
+    except:
+        invalid_option()
         
 def main():
     os.system('cls')
