@@ -14,6 +14,16 @@ def display_options():
     print('4. Sair\n')
 
 def register_new_restaurant():
+    ''' Essa função é responsável por cadastrar um novo restaurante
+    
+    Inputs:
+    - Nome do restaurante
+    - Categoria do restaurante
+
+    Output:
+    - Adiciona um novo restaurante a lista de restaurantes
+
+    '''
     display_subtitle('Cadastro de novos restaurantes')
 
     name = input('Digite o nome do restaurante que deseja cadastrar: ')
