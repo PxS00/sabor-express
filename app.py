@@ -5,9 +5,27 @@ restaurants = [ {'name':'Na Brasa Cozinha', 'category':'Brasileira', 'active':Fa
                 {'name':'Grão & Grelha', 'category':'Hamburguer', 'active':False}]
 
 def display_name():
+    '''Exibe o nome do aplicativo na tela inicial
+
+    Inputs:
+    - Nenhum
+
+    Output:
+    - Imprime o nome do app estilizado
+    '''
+
     print('𝓢𝓪𝓫𝓸𝓻 𝓔𝓼𝓹𝓻𝓮𝓼𝓼\n')
 
 def display_options():
+    '''Exibe as opções disponíveis no menu principal
+
+    Inputs:
+    - Nenhum
+
+    Output:
+    - Imprime as opções do menu principal
+    '''
+
     print('1. Cadastrar restaurante')
     print('2. Listar restaurantes')
     print('3. Atividade do restaurante')
@@ -34,6 +52,14 @@ def register_new_restaurant():
     back_to_main_menu()
 
 def list_restaurants():
+    '''Lista todos os restaurantes cadastrados, mostrando nome, categoria e status
+
+    Inputs:
+    - Nenhum
+
+    Output:
+    - Exibe a lista de restaurantes formatada
+    '''
     display_subtitle('Listando restaurantes')
 
     print(f'{'Nome do restaurante'.ljust(22)} | {'Categoria'.ljust(20)} | Status')
@@ -45,6 +71,14 @@ def list_restaurants():
     back_to_main_menu()
 
 def toggle_restaurant_state():
+    '''Alterna o estado (ativo/desativado) de um restaurante pelo nome informado
+
+    Inputs:
+    - Nome do restaurante
+
+    Output:
+    - Atualiza o status do restaurante ou informa se não encontrado
+    '''
     display_subtitle('Alterando estado do restaurante')
     
     restaurant_name = input('Digite o nome do restaurante que deseja alternar o estado: ')
@@ -62,17 +96,49 @@ def toggle_restaurant_state():
     back_to_main_menu()
 
 def end_app():
+    '''Encerra a execução do aplicativo
+
+    Inputs:
+    - Nenhum
+
+    Output:
+    - Exibe mensagem de encerramento
+    '''
     display_subtitle('Encerrando app...')
 
 def invalid_option():
+    '''Exibe mensagem de opção inválida e retorna ao menu principal
+
+    Inputs:
+    - Nenhum
+
+    Output:
+    - Mensagem de erro e redirecionamento ao menu
+    '''
     display_subtitle('Opção inválida!')
     back_to_main_menu()
 
 def back_to_main_menu():
+    '''Solicita confirmação do usuário e retorna ao menu principal
+
+    Inputs:
+    - Nenhum
+
+    Output:
+    - Aguarda entrada do usuário para exibir o menu principal novamente
+    '''
     input('\nDigite uma tecla para voltar ao menu principal: ')
     main()
 
 def display_subtitle(text):
+    '''Exibe um subtítulo formatado com linhas acima e abaixo
+
+    Inputs:
+    - text: string a ser exibida como subtítulo
+
+    Output:
+    - Exibe subtítulo com formatação visual
+    '''
     os.system('cls')
     line = '-' * (len(text))
     print(line)
@@ -81,6 +147,14 @@ def display_subtitle(text):
     print()
 
 def choose_option():
+    '''Solicita uma opção do usuário, chama a função correspondente e trata entradas inválidas
+
+    Inputs:
+    - Opção numérica do menu principal
+
+    Output:
+    - Executa a ação relacionada à opção escolhida ou exibe erro em caso de entrada inválida
+    '''
     try:
         option_chosen = int(input('Escolha uma opção: '))
         match option_chosen:
@@ -98,6 +172,14 @@ def choose_option():
         invalid_option()
         
 def main():
+    '''Função principal que inicializa o app e exibe o menu
+
+    Inputs:
+    - Nenhum
+
+    Output:
+    - Inicia o aplicativo e gerencia o fluxo principal
+    '''
     os.system('cls')
     display_name()
     display_options()
