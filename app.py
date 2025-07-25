@@ -5,27 +5,11 @@ restaurants = [ {'name':'Na Brasa Cozinha', 'category':'Brasileira', 'active':Fa
                 {'name':'Grão & Grelha', 'category':'Hamburguer', 'active':False}]
 
 def display_name():
-    '''Exibe o nome do aplicativo na tela inicial
-
-    Inputs:
-    - Nenhum
-
-    Output:
-    - Imprime o nome do app estilizado
-    '''
-
+    '''Exibe o nome do aplicativo na tela inicial'''
     print('𝓢𝓪𝓫𝓸𝓻 𝓔𝓼𝓹𝓻𝓮𝓼𝓼\n')
 
 def display_options():
-    '''Exibe as opções disponíveis no menu principal
-
-    Inputs:
-    - Nenhum
-
-    Output:
-    - Imprime as opções do menu principal
-    '''
-
+    '''Exibe as opções disponíveis no menu principal'''
     print('1. Cadastrar restaurante')
     print('2. Listar restaurantes')
     print('3. Atividade do restaurante')
@@ -53,9 +37,6 @@ def register_new_restaurant():
 
 def list_restaurants():
     '''Lista todos os restaurantes cadastrados, mostrando nome, categoria e status
-
-    Inputs:
-    - Nenhum
 
     Output:
     - Exibe a lista de restaurantes formatada
@@ -96,21 +77,11 @@ def toggle_restaurant_state():
     back_to_main_menu()
 
 def end_app():
-    '''Encerra a execução do aplicativo
-
-    Inputs:
-    - Nenhum
-
-    Output:
-    - Exibe mensagem de encerramento
-    '''
+    ''' Exibe mensagem de finalização do aplicativo '''
     display_subtitle('Encerrando app...')
 
 def invalid_option():
     '''Exibe mensagem de opção inválida e retorna ao menu principal
-
-    Inputs:
-    - Nenhum
 
     Output:
     - Mensagem de erro e redirecionamento ao menu
@@ -121,9 +92,6 @@ def invalid_option():
 def back_to_main_menu():
     '''Solicita confirmação do usuário e retorna ao menu principal
 
-    Inputs:
-    - Nenhum
-
     Output:
     - Aguarda entrada do usuário para exibir o menu principal novamente
     '''
@@ -131,10 +99,10 @@ def back_to_main_menu():
     main()
 
 def display_subtitle(text):
-    '''Exibe um subtítulo formatado com linhas acima e abaixo
+    ''' Exibe um subtítulo estilizado na tela 
 
     Inputs:
-    - text: string a ser exibida como subtítulo
+    - text: str - O texto do subtítulo
 
     Output:
     - Exibe subtítulo com formatação visual
@@ -172,14 +140,7 @@ def choose_option():
         invalid_option()
         
 def main():
-    '''Função principal que inicializa o app e exibe o menu
-
-    Inputs:
-    - Nenhum
-
-    Output:
-    - Inicia o aplicativo e gerencia o fluxo principal
-    '''
+    '''Função principal que inicializa o app e exibe o menu'''
     os.system('cls')
     display_name()
     display_options()
