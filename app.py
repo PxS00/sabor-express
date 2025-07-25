@@ -1,6 +1,6 @@
 import os
 
-restaurants = []
+restaurants = ['Na Brasa Cozinha', 'Flor do Manjericão']
 
 def display_name():
     print('𝓢𝓪𝓫𝓸𝓻 𝓔𝓼𝓹𝓻𝓮𝓼𝓼\n')
@@ -20,6 +20,15 @@ def register_new_restaurant():
     input('\nDigite uma tecla para voltar ao menu principal')
     main()
 
+def list_restaurants():
+    os.system('cls')
+    print('Listando os restaurantes\n')
+    for restaurant in restaurants:
+        print(f'. {restaurant}')
+
+    input('\nDigite uma tecla para voltar ao menu principal')
+    main()
+
 def end_app():
     os.system('cls')
     print('Encerrando app...\n')
@@ -36,7 +45,7 @@ def choose_option():
             case 1:
                 register_new_restaurant()
             case 2:
-                print('Listar restaurantes')
+                list_restaurants()
             case 3:
                 print('Ativar restaurante')
             case 4:
