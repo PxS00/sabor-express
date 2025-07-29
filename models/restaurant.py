@@ -23,8 +23,3 @@ class Restaurant:
     def toggle_state(self):
         self._active = not self._active
  
-restaurant_pizza_suprema = Restaurant('Pizza Suprema', 'Pizzaria')
-restaurant_pizza_suprema.toggle_state()
-restaurant_grao_e_grelha = Restaurant('Grão & Grelha', 'Hamburguer')
-
-Restaurant.list_restaurants()
