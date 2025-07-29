@@ -1,4 +1,5 @@
 from models.rating import Rating
+from models.menu.menu_item import MenuItem
 
 class Restaurant:
     """Represents a restaurant and its characteristics."""
@@ -75,9 +76,7 @@ class Restaurant:
         number_of_notes = len(self._rating)
         media = round(sum_of_grades / number_of_notes, 1)
         return media
-    
-    def add_drink_to_menu(self, drink):        
-        self._menu.append(drink)
 
-    def add_dish_to_menu(self, dish):        
-        self._menu.append(dish)
+    def add_to_menu(self, item):
+        if isinstance(item, MenuItem):
+            self._menu.append(item)

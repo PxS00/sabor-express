@@ -11,8 +11,8 @@ restaurant_na_brasa_cozinha = Restaurant('Na Brasa Cozinha', 'Brasileira')
 
 drink_watermelon_juice = Drink('Suco de Melancia', 5.0, 'Grande')
 dish_paozinho = Dish('Paozinho', 2.00, 'O melhor pão da cidade')
-restaurant_na_brasa_cozinha.add_drink_to_menu(drink_watermelon_juice)
-restaurant_na_brasa_cozinha.add_dish_to_menu(dish_paozinho)
+restaurant_na_brasa_cozinha.add_to_menu(drink_watermelon_juice)
+restaurant_na_brasa_cozinha.add_to_menu(dish_paozinho)
 
 def main():
     print(drink_watermelon_juice)
