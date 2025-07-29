@@ -10,7 +10,9 @@ restaurant_grao_e_grelha = Restaurant('Grão & Grelha', 'Hamburguer')
 restaurant_na_brasa_cozinha = Restaurant('Na Brasa Cozinha', 'Brasileira')
 
 drink_watermelon_juice = Drink('Suco de Melancia', 5.0, 'Grande')
+drink_watermelon_juice.apply_discount()
 dish_paozinho = Dish('Paozinho', 2.00, 'O melhor pão da cidade')
+dish_paozinho.apply_discount()
 restaurant_na_brasa_cozinha.add_to_menu(drink_watermelon_juice)
 restaurant_na_brasa_cozinha.add_to_menu(dish_paozinho)
 
