@@ -83,11 +83,16 @@ class Restaurant:
 
     @property
     def show_menu(self):
-        print(f'Cardápio do restaurante {self._name}\n')
+        print(f'\nCardápio do restaurante {self._name}\n')
+
         for i, item in enumerate(self._menu, start=1):
+            detalhes = [f'{i}. Nome: {item._name}', f'Preço: R${item._price:.2f}']
+
+            if hasattr(item, 'size'):
+                detalhes.append(f'Tamanho: {item.size}')
             if hasattr(item, 'description'):
-                message_dish = f'{i}. Nome: {item._name.ljust(20)} | Preço: R${str(item._price).ljust(20)} | Descrição: {item.description}'
-                print(message_dish)
-            elif hasattr(item, 'size'):
-                message_drink = f'{i}. Nome: {item._name.ljust(20)} | Preço: R${str(item._price).ljust(20)} | Tamanho: {item.size}'
-                print(message_drink)
+                detalhes.append(f'Descrição: {item.description}')
+            if hasattr(item, 'type'):
+                detalhes.append(f'Tipo: {item.type}')
+
+            print(' | '.join(detalhes))
