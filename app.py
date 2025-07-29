@@ -15,8 +15,7 @@ restaurant_na_brasa_cozinha.add_to_menu(drink_watermelon_juice)
 restaurant_na_brasa_cozinha.add_to_menu(dish_paozinho)
 
 def main():
-    print(drink_watermelon_juice)
-    print(dish_paozinho)
+    restaurant_na_brasa_cozinha.show_menu
     
 
 if __name__ == '__main__':

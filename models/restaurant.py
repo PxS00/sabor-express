@@ -80,3 +80,14 @@ class Restaurant:
     def add_to_menu(self, item):
         if isinstance(item, MenuItem):
             self._menu.append(item)
+
+    @property
+    def show_menu(self):
+        print(f'Cardápio do restaurante {self._name}\n')
+        for i, item in enumerate(self._menu, start=1):
+            if hasattr(item, 'description'):
+                message_dish = f'{i}. Nome: {item._name.ljust(20)} | Preço: R${str(item._price).ljust(20)} | Descrição: {item.description}'
+                print(message_dish)
+            elif hasattr(item, 'size'):
+                message_drink = f'{i}. Nome: {item._name.ljust(20)} | Preço: R${str(item._price).ljust(20)} | Tamanho: {item.size}'
+                print(message_drink)
