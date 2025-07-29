@@ -9,10 +9,13 @@ restaurant_pizza_suprema.toggle_state()
 restaurant_grao_e_grelha = Restaurant('Grão & Grelha', 'Hamburguer')
 restaurant_na_brasa_cozinha = Restaurant('Na Brasa Cozinha', 'Brasileira')
 
-drink_juice = Drink('Suco de Melancia', 5.0, 'Grande')
+drink_watermelon_juice = Drink('Suco de Melancia', 5.0, 'Grande')
 dish_paozinho = Dish('Paozinho', 2.00, 'O melhor pão da cidade')
+restaurant_na_brasa_cozinha.add_drink_to_menu(drink_watermelon_juice)
+restaurant_na_brasa_cozinha.add_dish_to_menu(dish_paozinho)
+
 def main():
-    print(drink_juice)
+    print(drink_watermelon_juice)
     print(dish_paozinho)
     
 
