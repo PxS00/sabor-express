@@ -121,7 +121,7 @@ Acesse: http://127.0.0.1:8000/docs para visualizar a documentação interativa.
 
 <br>
 
-- **Python 3.13** — Linguagem de programação principal
+- **Python 3.10+** — Linguagem de programação principal
 - **FastAPI** — Framework moderno para criação de APIs RESTful
 - **Requests** — Biblioteca para requisições HTTP
 - **Uvicorn** — Servidor ASGI para aplicações FastAPI
@@ -135,6 +135,6 @@ Acesse: http://127.0.0.1:8000/docs para visualizar a documentação interativa.
 
 Desenvolvido por Lucas Rossoni Dieder  
 GitHub: [@PxS00](https://github.com/PxS00)
-Linkedin: [lucasrossoni](linkedin.com/in/lucasrossoni)
+LinkedIn: [lucas-rossoni-dieder](https://www.linkedin.com/in/lucas-rossoni-dieder)
 
 Projeto desenvolvido com fins educacionais através da plataforma Alura.
