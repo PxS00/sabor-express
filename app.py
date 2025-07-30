@@ -6,7 +6,6 @@ from models.menu.dessert import Dessert
 restaurant_pizza_suprema = Restaurant('Pizza Suprema', 'Pizzaria')
 restaurant_pizza_suprema.toggle_state()
 
-
 restaurant_grao_e_grelha = Restaurant('Grão & Grelha', 'Hamburguer')
 restaurant_na_brasa_cozinha = Restaurant('Na Brasa Cozinha', 'Brasileira')
 
